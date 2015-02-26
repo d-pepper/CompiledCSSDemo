@@ -17,3 +17,8 @@ gulp.task('less', function () {
         .pipe(gulp.dest('css'));
     }
 )
+
+gulp.task('watch', function(){
+    gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('less/*.less', ['less']);
+})
