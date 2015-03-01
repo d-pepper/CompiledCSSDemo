@@ -5,20 +5,20 @@ var sass = require('gulp-sass');
 var less = require('gulp-less');
 
 gulp.task('sass', function () {
-    return gulp.src('scss/*.scss')
+    return gulp.src('sass/bootstrap-sass/bootstrap.scss')
         .pipe(sass())
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('css/bootstrap-sass.min.css'));
     }
 )
 
 gulp.task('less', function () {
-    return gulp.src('less/*.less')
+    return gulp.src('less/bootstrap-less/bootstrap.less')
         .pipe(less())
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('css/bootstrap-less.min.css'));
     }
 )
 
 gulp.task('watch', function(){
-    gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('sass/*.scss', ['sass']);
     gulp.watch('less/*.less', ['less']);
 })
